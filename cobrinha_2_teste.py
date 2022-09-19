@@ -12,10 +12,10 @@ pygame.init()
 
 # definindo sons;
 tempo = pygame.time.Clock()
-musica_de_fundo = pygame.mixer.music.load('lofi.mp3')
+musica_de_fundo = pygame.mixer.music.load('Jogo_Cobrinha/lofi.mp3')
 pygame.mixer.music.set_volume(0.2)
 pygame.mixer.music.play(-1)
-barulho_colisao = pygame.mixer.Sound('moeda.mp3')
+barulho_colisao = pygame.mixer.Sound('Jogo_Cobrinha/moeda.mp3')
 pygame.mixer.Sound.set_volume(barulho_colisao,0.1)
 
 # definindo velocidade, e tamanho da tela;
