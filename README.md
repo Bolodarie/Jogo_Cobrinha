@@ -5,4 +5,7 @@ Usando especialmente o pygame.
 
 Para mudar a música ou o som, basta baixar um novo som, adiciona-lo à pasta, e mudar na variavel "musica_de_fundo" e "barulho_colisao".
 
+Caso de erro no som, só copiar o caminho relativo do lofi.mp3 e moeda.mp3
+
+
 Quest que fez!!
