@@ -39,7 +39,7 @@ fonte = pygame.font.SysFont('arial', 40, bold=True, italic=True)
 
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption('Jogo')
-relogio = pygame.time.Clock()
+# relogio = pygame.time.Clock()
 lista_cobra = []
 comprimento_inicial = 5
 morreu = False
@@ -116,7 +116,7 @@ def reiniciar_jogo():
 
 # corpo principal do funcionamento do jogo;
 while True:
-    relogio.tick(30)
+    tempo.tick(30)
     tela.fill((200,255,255))
     
     mensagem = f'Pontos: {pontos}'
