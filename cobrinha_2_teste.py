@@ -11,7 +11,7 @@ vermelho = (200,0,0)
 pygame.init()
 
 # definindo sons;
-clock = pygame.time.Clock()
+tempo = pygame.time.Clock()
 musica_de_fundo = pygame.mixer.music.load('lofi.mp3')
 pygame.mixer.music.set_volume(0.2)
 pygame.mixer.music.play(-1)
@@ -91,7 +91,7 @@ def paused():
         
 
         pygame.display.update()
-        clock.tick(15)       
+        tempo.tick(15)       
 
 def aumenta_cobra(lista_cobra):
     for XeY in lista_cobra:
