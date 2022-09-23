@@ -3,6 +3,7 @@ from pygame.locals import *
 from sys import exit
 from random import randint
 import tkinter as tk
+import os
 
 global pause
 pause = False
@@ -10,12 +11,14 @@ preto = (0,0,0)
 vermelho = (200,0,0)
 pygame.init()
 
-# definindo sons;
+
+# definindo sons;x
 tempo = pygame.time.Clock()
-musica_de_fundo = pygame.mixer.music.load('lofi.mp3')
+pygame.mixer.init()
+musica_de_fundo = pygame.mixer.music.load("Jogo_Cobrinha\lofi.mp3")
 pygame.mixer.music.set_volume(0.2)
 pygame.mixer.music.play(-1)
-barulho_colisao = pygame.mixer.Sound('moeda.mp3')
+barulho_colisao = pygame.mixer.Sound("Jogo_Cobrinha\moeda.mp3")
 pygame.mixer.Sound.set_volume(barulho_colisao,0.1)
 
 # definindo velocidade, e tamanho da tela;
