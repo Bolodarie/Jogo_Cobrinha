@@ -14,11 +14,14 @@ pygame.init()
 
 # definindo sons;x
 tempo = pygame.time.Clock()
+
 pygame.mixer.init()
 musica_de_fundo = pygame.mixer.music.load("Jogo_Cobrinha\lofi.mp3")
 pygame.mixer.music.set_volume(0.2)
 pygame.mixer.music.play(-1)
 barulho_colisao = pygame.mixer.Sound("Jogo_Cobrinha\moeda.mp3")
+
+
 pygame.mixer.Sound.set_volume(barulho_colisao,0.1)
 
 # definindo velocidade, e tamanho da tela;
@@ -34,7 +37,6 @@ y_controle = 0
 
 x_maca = randint(40, 540)
 y_maca = randint(50, 350)
-
 
 x_muro = randint(50, 500)
 y_muro = randint(40, 320)
