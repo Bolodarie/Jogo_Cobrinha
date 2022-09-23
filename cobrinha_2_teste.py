@@ -36,13 +36,15 @@ x_maca = randint(40, 540)
 y_maca = randint(50, 350)
 
 
+x_muro = randint(50, 500)
+y_muro = randint(40, 320)
+
 # definindo fontes, comprimento da cobrinha;
 pontos = 0
 fonte = pygame.font.SysFont('arial', 40, bold=True, italic=True)
 
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption('Jogo')
-# relogio = pygame.time.Clock()
 lista_cobra = []
 comprimento_inicial = 5
 morreu = False
@@ -114,6 +116,8 @@ def reiniciar_jogo():
     lista_cabeca = []
     x_maca = randint(40, 540)
     y_maca = randint(50, 350)
+    x_muro = randint(50, 500)
+    y_muro = randint(40, 320)
     morreu = False
 
 
@@ -179,13 +183,41 @@ while True:
         barulho_colisao.play()
         comprimento_inicial = comprimento_inicial + 1
 
+    if pontos >= 10:
+        muro = pygame.draw.rect(tela, (150, 200, 100), (x_muro, y_muro, 100,20 ))
+        if cobra.colliderect(muro):
+            fonte2 = pygame.font.SysFont('arial', 20, True, True)
+            mensagem = 'Game over! Pressione a tecla R para jogar novamente'
+            texto_formatado = fonte2.render(mensagem, True, (0,0,0))
+            ret_texto = texto_formatado.get_rect()
+
+            morreu = True
+        while morreu:
+            tela.fill((200,255,255))
+            pygame.mixer.music.pause
+            for event in pygame.event.get():
+                if event.type == QUIT :
+                    pygame.quit()
+                    exit()
+                if event.type == KEYDOWN:
+                    if event.key == K_q :
+                        pygame.quit()
+                        exit()
+                    if event.key == K_r:
+                        reiniciar_jogo()
+
+            ret_texto.center = (largura//2, altura//2) 
+            tela.blit(texto_formatado, ret_texto)
+            pygame.display.update()
+
+
     lista_cabeca = []
     lista_cabeca.append(x_cobra)
     lista_cabeca.append(y_cobra)
     
     lista_cobra.append(lista_cabeca)
 
-    if lista_cobra.count(lista_cabeca) > 1:
+    if lista_cobra.count(lista_cabeca) > 1 :
         fonte2 = pygame.font.SysFont('arial', 20, True, True)
         mensagem = 'Game over! Pressione a tecla R para jogar novamente'
         texto_formatado = fonte2.render(mensagem, True, (0,0,0))
